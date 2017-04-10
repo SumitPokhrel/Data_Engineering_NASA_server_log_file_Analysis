@@ -1,3 +1,12 @@
+Uses python3.5 and following dependencies 
+import re
+import io
+import datetime
+import time
+from dateutil.parser import parse
+import itertools
+from operator import itemgetter
+import sys
 # Table of Contents
 1. [Challenge Summary](README.md#challenge-summary)
 2. [Details of Implementation](README.md#details-of-implementation)

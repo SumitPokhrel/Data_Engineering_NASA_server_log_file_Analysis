@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import re
 import io
 import datetime
@@ -192,7 +193,7 @@ top_10_bandwidth_consuming_resources = sorted(dict_of_resources_bytes.items(), k
                                                                                 # k(1) is the value, k(0) is the key
 
 # Writing a dictionary to a text file with one line for every 'key:value', top 10 bandwidth consuming resources
-my_file = open(sys.argv[3], "w")
+my_file = open(sys.argv[4], "w")
 for key, value in top_10_bandwidth_consuming_resources:
     for ch in ['"POST ', ' HTTP/1.0"', '"GET ', '"HEAD ', '"']:  # Getting rid of these
         if ch in key:
@@ -242,8 +243,8 @@ for i in range(0,len(list_of_time),1):
     window_start += 1
     window_end += 1
 
-#  Writing a dictionary to a text file with one line for every 'key:value', top 10 bandwidth consuming resources
-my_file = open(sys.argv[4], "w")
+#  Writing a dictionary to a text file with one line for every 'key:value', top 10 60 minutes period
+my_file = open(sys.argv[3], "w")
 for key in dict_of_occurance:
     my_file.write(str(key['Start Time'])+' -0400,' + str(key['Count'])+"\n")
 # # --------------------------------------------------------------------------------------------------------------------

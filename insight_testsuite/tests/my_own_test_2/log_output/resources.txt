@@ -1,0 +1,5 @@
+/login
+/
+/logout
+/history/mercury/ma-8/ma-8.html
+/images/WORLD-logosmall.gif

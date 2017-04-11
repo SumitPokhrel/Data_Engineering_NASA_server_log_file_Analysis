@@ -212,27 +212,27 @@ list_of_window_start = []
 year_No3, month_No3, day_No3, hours_No3, minutes_No3, seconds_No3 = numbers_from_datetime(list_of_time[0])
 time_stamp_No3 = int(datetime.datetime(year_No3, month_No3, day_No3, hours_No3, minutes_No3, seconds_No3).timestamp())  # Epoch of the first data point
 CONST_EPOCH = (time_stamp_No3)  # EPOCH OF STARTING TIME OF OUR DATA
-window_start = int(time_stamp_No3)-CONST_EPOCH
-window_size = int(3600)
+window_start = int(time_stamp_No3)-CONST_EPOCH  # Normalizing to 0 
+window_size = int(3600)  # 60 minutes window 
 window_end = window_start + window_size
 
 for i in range(0,len(list_of_time),1):
     for j in range(0,len(list_of_time),1):
         year_No4, month_No4, day_No4, hours_No4, minutes_No4, seconds_No4 = numbers_from_datetime(list_of_time[j])
         time_stamp_No4 = int(datetime.datetime(year_No4, month_No4, day_No4, hours_No4, minutes_No4, seconds_No4).timestamp())  # Epoch
-        time_stamp_No4 = time_stamp_No4-CONST_EPOCH
-        if time_stamp_No4 <= window_end and time_stamp_No4>=window_start:
+        time_stamp_No4 = time_stamp_No4-CONST_EPOCH # Time stamp of the first data from the log file 
+        if time_stamp_No4 <= window_end and time_stamp_No4>=window_start: # If the first data's time stamp remains in our first 60 min window 
             occurance = occurance + 1
-    window_start_for_conversion = epoch_to_string(window_start+ CONST_EPOCH)
-    if(index<10):
+    window_start_for_conversion = epoch_to_string(window_start+ CONST_EPOCH) # Converting back to string for our purpose 
+    if(index<10): # Since we are sorting and keeping only the top 10 
         dict_of_occurance.insert(index,{
                     "Start Time": window_start_for_conversion,
                     "Count": occurance
                 })
     else:
                 dict_of_occurance=sorted(dict_of_occurance, key=itemgetter('Count'),reverse=True)#sort the list
-                if  occurance > dict_of_occurance[9]['Count']:
-                    dict_of_occurance.pop (9)#pop the lowest elemet
+                if  occurance > dict_of_occurance[9]['Count']: # We need to eliminate anything more than 10 itmes 
+                    dict_of_occurance.pop (9)# Pop the lowest elemet
                     dict_of_occurance.insert (index, {
                     "Start Time": window_start_for_conversion,
                     "Count": occurance

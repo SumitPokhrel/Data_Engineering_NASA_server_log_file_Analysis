@@ -1,0 +1,10 @@
+/shuttle/missions/sts-71/movies/sts-71-hatch-hand-group.mpg
+/history/apollo/apollo-13/sounds/a13_005.wav
+/shuttle/technology/sts-newsref/sts_asm.html
+/shuttle/missions/sts-67/images/KSC-95EC-0388.jpg
+/
+/shuttle/missions/sts-71/images/KSC-95EC-0911.jpg
+/shuttle/missions/sts-71/movies/sts-71-mir-dock.mpg
+/shuttle/missions/sts-71/mission-sts-71.html
+/shuttle/missions/sts-71/sts-71-patch-small.gif
+/images/launchmedium.gif

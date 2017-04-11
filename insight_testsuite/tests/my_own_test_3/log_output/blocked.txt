@@ -1,0 +1,4 @@
+207.195.10.82 - - [02/Jul/1995:08:43:24 -0400] "POST /login HTTP/1.0" 401 1420
+207.195.10.82 - - [02/Jul/1995:08:43:25 -0400] "GET / HTTP/1.0" 200 7074
+207.195.10.82 - - [02/Jul/1995:08:43:26 -0400] "GET /shuttle/missions/sts-72/sts-72-patch-small.gif HTTP/1.0" 200 4179
+207.204.25.80 - - [02/Jul/1995:08:43:50 -0400] "GET /shuttle/missions/sts-74/mission-sts-74.html HTTP/1.0" 200 3709

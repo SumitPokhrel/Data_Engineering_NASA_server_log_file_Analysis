@@ -1,0 +1,7 @@
+/
+/login
+/shuttle/missions/sts-72/sts-72-patch-small.gif
+/shuttle/missions/sts-74/mission-sts-74.html
+/logout
+/htbin/cdt_clock.pl
+/shuttle/countdown/liftoff.html

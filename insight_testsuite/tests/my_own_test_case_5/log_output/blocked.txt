@@ -1,0 +1,1 @@
+207.155.10.13 - - [22/Jul/1995:02:45:22 -0400] "GET /history/apollo/images/apollo-small.gif HTTP/1.0" 200 9630

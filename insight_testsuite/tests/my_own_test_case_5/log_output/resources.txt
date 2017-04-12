@@ -1,0 +1,10 @@
+/images/launchpalms.gif
+/shuttle/missions/sts-70/movies/sts-70-launch-press.mpg
+/shuttle/countdown/count70.gif
+/history/apollo/apollo-13/apollo-13.html
+/
+/shuttle/technology/sts-newsref/et.html
+/history/apollo/images/footprint-small.gif
+/software/winvn/wvsmall.gif
+/history/apollo/apollo-13/apollo-13-patch-small.gif
+/shuttle/countdown/

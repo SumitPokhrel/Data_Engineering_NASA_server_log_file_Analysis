@@ -12,8 +12,8 @@ import sys
 # Method to convert epoch to [01/Jul/1995:00:00:12 -0400] format
 # ----------------------------------------------------------------------------------------------------------------------
 def epoch_to_string(m):
-    t = datetime.datetime.fromtimestamp (float (m))
-    month_num = t.strftime ('%m')
+    t = datetime.datetime.fromtimestamp (float (m)) # gives the date and time from epoch in a different format 
+    month_num = t.strftime ('%m') # extracts month from t 
     month_num = int (month_num)
     day_num = t.strftime ('%d')
     year_num = t.strftime ('%Y')
@@ -34,8 +34,8 @@ def epoch_to_string(m):
         11: 'Nov',
         12: 'Dec'
     }
-    month_month = n[month_num]
-    month_string = day_num + '/'
+    month_month = n[month_num] # extracts the String month from number month using corresponding key-value pair 
+    month_string = day_num + '/' # adding the required string to match our format 
     month_string += month_month
     month_string += '/'
     month_string += year_num
@@ -72,7 +72,7 @@ def numbers_from_datetime(string):
             'nov': 11,
             'dec': 12
         }
-        s = string.strip()[:3].lower()
+        s = string.strip()[:3].lower() # strips the first three letter of a month and changes to lowercase 
 
         try:
             out = m[s]
@@ -118,27 +118,27 @@ with io.open(sys.argv[1], 'r', encoding='latin-1') as infile:  # We don't have t
         # --------------------------------------------------------------------------------------------------------------
         [a, b] = (line.split("- -"))  # split using "--" to separate IP address from the rest
         a = a.replace(" ", "")  # removing the space(s) since the log file can be noisy
-        q = re.compile('\d{2}\]') # matches any two digits followed by ]
-        r = q.findall(b) # matches everything in b that has q 
+        q = re.compile('\d{2}\]') # matches any two digits followed by ]. This is for -0400]
+        r = q.findall(b) # matches everything in b that has regular expression q 
         r = str(r)
         r = r.replace("['", "")
         r = r.replace("']", "")
 
         [b, c] = b.split(r)
         b = b.replace("[", "")
-        b = b.strip()
+        b = b.strip() # removes leading and trailing spaces 
         c = c.strip()
 
-        p = re.compile('\" \d{3}')
-        d = p.findall(c)
+        p = re.compile('\" \d{3}') # matches " and space follwed by 3 digits. This is for " 200
+        d = p.findall(c) # matches everything in c that has regular expression p 
         d = str(d)
         d = d.replace('\'" ', '')
         d = d.replace('\'', '')
         d = d.replace('[', '')
         d = d.replace(']', '')
 
-        gg = " " + d + " "
-        [c, e] = c.split(gg)
+        gg = " " + d + " " # getting the original reply code with spaces, so that we can split 
+        [c, e] = c.split(gg) # splitting c using gg 
         e = e.strip()
         if e == "-":  # Some lines in the log file will list - in the bytes field.
             e = "0"   # For the purposes of this challenge, that should be interpreted as 0 bytes.

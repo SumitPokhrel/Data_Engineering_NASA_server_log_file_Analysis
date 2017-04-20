@@ -118,8 +118,8 @@ with io.open(sys.argv[1], 'r', encoding='latin-1') as infile:  # We don't have t
         # --------------------------------------------------------------------------------------------------------------
         [a, b] = (line.split("- -"))  # split using "--" to separate IP address from the rest
         a = a.replace(" ", "")  # removing the space(s) since the log file can be noisy
-        q = re.compile('\d{2}\]')
-        r = q.findall(b)
+        q = re.compile('\d{2}\]') # matches any two digits followed by ]
+        r = q.findall(b) # matches everything in b that has q 
         r = str(r)
         r = r.replace("['", "")
         r = r.replace("']", "")
